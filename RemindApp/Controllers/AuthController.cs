@@ -1,6 +1,10 @@
 ﻿
 
 
+
+
+
+
 namespace RemindApp.Controllers;
 
 
@@ -12,6 +16,13 @@ public class AuthController(
     [HttpPost("login")]
     [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginCommand command, CancellationToken cancellationToken)
+    {
+        MResponse<LoginResponseModel> result = await mediator.Send(command, cancellationToken).ConfigureAwait(false);
+        return result.GetActionResult();
+    }
+    [HttpPost("system-register")]
+    [AllowAnonymous]
+    public async Task<IActionResult> Register([FromBody] RegisterCommand command, CancellationToken cancellationToken)
     {
         MResponse<LoginResponseModel> result = await mediator.Send(command, cancellationToken).ConfigureAwait(false);
         return result.GetActionResult();

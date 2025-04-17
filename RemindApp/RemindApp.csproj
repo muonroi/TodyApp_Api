@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <Content Remove="appsettings.Production.json" />
+    <Content Remove="Resources\ErrorMessages-en-US.json" />
+    <Content Remove="Resources\ErrorMessages-vi-VN.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ErrorMessages-en-US.json" />
+    <EmbeddedResource Include="Resources\ErrorMessages-vi-VN.json" />
   </ItemGroup>
 
   <ItemGroup>

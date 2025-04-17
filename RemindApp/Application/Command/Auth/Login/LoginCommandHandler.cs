@@ -18,7 +18,7 @@ public class LoginCommandHandler(
 
         if (!authResult.IsOK)
         {
-            result.AddErrorMessage("Tài khoản hoặc mật khẩu không hợp lệ");
+            result.AddResultFromErrorList(authResult.ErrorMessages);
             return result;
         }
 

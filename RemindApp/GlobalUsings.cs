@@ -42,3 +42,6 @@ global using ILogger = Serilog.ILogger;
 global using MuonRoi.SenderTelegram.Services;
 global using Muonroi.BuildingBlock.Internal.Services;
 global using RemindApp.Extensions;
+global using Muonroi.BuildingBlock.External.Common.Models.Requests.Registers;
+global using RemindApp.Application.Command.Auth.Register;
+global using Muonroi.BuildingBlock.External.Common;
