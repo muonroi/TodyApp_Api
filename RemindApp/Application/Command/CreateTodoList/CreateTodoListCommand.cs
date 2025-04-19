@@ -1,11 +1,7 @@
-﻿
-
-
-
-namespace RemindApp.Application.Command.CreateTodoList;
+﻿namespace RemindApp.Application.Command.CreateTodoList;
 
 public class CreateTodoListCommand : TodoListRequestModel
-    , IRequest<MResponse<TodoListResponseModel
+    , IRequest<MResponse<bool
         >>
 {
 }

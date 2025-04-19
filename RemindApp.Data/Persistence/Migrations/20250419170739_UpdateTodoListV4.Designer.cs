@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RemindApp.Data.Persistence;
@@ -11,9 +12,11 @@ using RemindApp.Data.Persistence;
 namespace RemindApp.Data.Persistence.Migrations
 {
     [DbContext(typeof(RemindAppDbContext))]
-    partial class RemindAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250419170739_UpdateTodoListV4")]
+    partial class UpdateTodoListV4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RemindApp.Data.Persistence;
@@ -11,9 +12,11 @@ using RemindApp.Data.Persistence;
 namespace RemindApp.Data.Persistence.Migrations
 {
     [DbContext(typeof(RemindAppDbContext))]
-    partial class RemindAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250419154509_UpdateTodoListv2")]
+    partial class UpdateTodoListv2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -834,79 +837,6 @@ namespace RemindApp.Data.Persistence.Migrations
                     b.ToTable("MUserTokens");
                 });
 
-            modelBuilder.Entity("RemindApp.Core.Domain.CategoryEntity", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(0);
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnOrder(3);
-
-                    b.Property<double>("CreatedDateTS")
-                        .HasColumnType("double precision")
-                        .HasColumnOrder(15);
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnOrder(19);
-
-                    b.Property<Guid>("CreatorUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnOrder(20);
-
-                    b.Property<double?>("DeletedDateTS")
-                        .HasColumnType("double precision")
-                        .HasColumnOrder(17);
-
-                    b.Property<Guid?>("DeletedUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnOrder(24);
-
-                    b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnOrder(23);
-
-                    b.Property<Guid>("EntityId")
-                        .HasColumnType("uuid")
-                        .HasColumnOrder(1);
-
-                    b.Property<string>("Icon")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnOrder(4);
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnOrder(18);
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnOrder(21);
-
-                    b.Property<double?>("LastModificationTimeTs")
-                        .HasColumnType("double precision")
-                        .HasColumnOrder(16);
-
-                    b.Property<Guid?>("LastModificationUserId")
-                        .HasColumnType("uuid")
-                        .HasColumnOrder(22);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnOrder(2);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Category");
-                });
-
             modelBuilder.Entity("RemindApp.Core.Domain.ReminderSettingEntity", b =>
                 {
                     b.Property<long>("Id")
@@ -982,8 +912,8 @@ namespace RemindApp.Data.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<Guid?>("CategoryId")
-                        .HasColumnType("uuid")
+                    b.Property<int?>("Category")
+                        .HasColumnType("integer")
                         .HasColumnOrder(10);
 
                     b.Property<double>("CreatedDateTS")

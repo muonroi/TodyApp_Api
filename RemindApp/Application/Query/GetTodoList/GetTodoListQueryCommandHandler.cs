@@ -13,10 +13,20 @@ public class GetTodoListQueryCommandHandler(
     MPaginationConfig paginationConfig,
     ITodoListQuery todoListQuery
 ) : BaseCommandHandler(mapper, tokenInfo, authenticateRepository, logger, mediator, paginationConfig),
-    IRequestHandler<GetTodoListQueryCommand, MResponse<TodoListResponseModel>>
+    IRequestHandler<GetTodoListQueryCommand, MResponse<MPagedResult<TodoListResponseModel>>>
 {
-    public Task<MResponse<TodoListResponseModel>> Handle(GetTodoListQueryCommand request, CancellationToken cancellationToken)
+    public async Task<MResponse<MPagedResult<TodoListResponseModel>>> Handle(GetTodoListQueryCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        MResponse<MPagedResult<TodoListResponseModel>> result = new();
+        MPagedResult<TodoListResponseModel> todoList = await todoListQuery.GetPagedDataAsync(request.PageIndex, DefaultPageSize, request.Search).ConfigureAwait(false);
+
+        if (todoList == null)
+        {
+            result.Result = new MPagedResult<TodoListResponseModel>();
+            result.AddErrorMessage("Todo list not found.");
+            return result;
+        }
+        result.Result = todoList;
+        return result;
     }
 }

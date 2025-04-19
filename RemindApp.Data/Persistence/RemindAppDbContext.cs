@@ -15,6 +15,8 @@ public class RemindAppDbContext : MDbContext
 
     public DbSet<ReminderSettingEntity> ReminderSettingEntities { get; set; }
 
+    public DbSet<CategoryEntity> CategoryEntities { get; set; }
+
     public RemindAppDbContext(DbContextOptions options)
    : base(options, new NoMediator())
     { }

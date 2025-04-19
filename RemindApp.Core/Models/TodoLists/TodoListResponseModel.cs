@@ -3,10 +3,13 @@ public class TodoListResponseModel
 {
     public Guid EntityId { get; set; }
     public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public DateTime DueDate { get; set; }
-    public TaskGroup TaskGroup { get; set; } = TaskGroup.Today;
-    public DateTime RemindDate { get; set; }
-    public bool IsCompleted { get; set; }
-    public DateTime CreateOnTime { get; set; }
+    public bool IsDone { get; set; }
+    public DateTime? DueDate { get; set; }
+    public PriorityLevel? Priority { get; set; }
+    public bool HasReminder { get; set; }
+    public string? Description { get; set; }
+    public TimeSpan? ReminderTime { get; set; }
+    public bool? ReminderRepeats { get; set; }
+    public Guid Category { get; set; }
+
 }
