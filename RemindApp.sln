@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemindApp.Core", "RemindApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemindApp.Data", "RemindApp.Data\RemindApp.Data.csproj", "{0389B866-F749-4FA9-BEA8-2E082D1CECBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Muonroi.BuildingBlock", "..\..\..\Work\Extensions\MuonroiBuildingBlock\Muonroi.BuildingBlock.csproj", "{2959A9A1-4EF5-7714-76A0-978C674092C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +29,15 @@ Global
 		{0389B866-F749-4FA9-BEA8-2E082D1CECBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0389B866-F749-4FA9-BEA8-2E082D1CECBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0389B866-F749-4FA9-BEA8-2E082D1CECBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2959A9A1-4EF5-7714-76A0-978C674092C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2959A9A1-4EF5-7714-76A0-978C674092C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2959A9A1-4EF5-7714-76A0-978C674092C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2959A9A1-4EF5-7714-76A0-978C674092C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55CEC1A5-5686-4230-BA07-9999E3E47849}
 	EndGlobalSection
 EndGlobal
