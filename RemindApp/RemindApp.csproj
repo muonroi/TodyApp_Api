@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="appsettings.Production.json" />
     <Content Remove="Resources\ErrorMessages-en-US.json" />
     <Content Remove="Resources\ErrorMessages-vi-VN.json" />
   </ItemGroup>
@@ -15,10 +14,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\ErrorMessages-en-US.json" />
     <EmbeddedResource Include="Resources\ErrorMessages-vi-VN.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="appsettings.Production.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +27,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Minio" Version="6.0.4" />
-    <!--<PackageReference Include="Muonroi.BuildingBlock" Version="1.5.9.9" />-->
+    <PackageReference Include="Muonroi.BuildingBlock" Version="1.5.11" />
     <PackageReference Include="MuonRoi.SenderTelegram" Version="1.0.6.2" />
     <PackageReference Include="NPOI" Version="2.7.2" />
     <PackageReference Include="Serilog.Sinks.Async" Version="2.1.0" />
@@ -40,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Work\Extensions\MuonroiBuildingBlock\Muonroi.BuildingBlock.csproj" />
     <ProjectReference Include="..\RemindApp.Core\RemindApp.Core.csproj" />
     <ProjectReference Include="..\RemindApp.Data\RemindApp.Data.csproj" />
   </ItemGroup>
